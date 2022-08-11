@@ -1,20 +1,17 @@
 import React from "react"
-import CardImage from "../images/katie-zaferes.png"
-import StarImage from "../images/star.png"
 
 
-function Card() {
+function Card({img,rating,reviewCount,country,title,price}) {
     return(
-        <div class="card">
-            <div class="badge"><p>SOLD OUT</p></div>
-            <img src={CardImage} alt="card avatar"/>
-            <div class="rating">
-                <img src={StarImage} alt="rating star" />
-                <p>5.0 <span class="grey">(6) · USA</span></p>
+        <div className="card">
+            <img src={`/images/${img}`} alt="main-img" />
+            <div className="rating">
+                <img src="/images/star.png" alt="rating star" />
+                <p>{rating} <span className="grey">({reviewCount}) · {country}</span></p>
             </div>
 
-            <p>Life lessons with Katie Zaferes</p>
-            <p><strong>From $136</strong> / person</p>
+            <p>{title}</p>
+            <p><strong>From ${price}</strong> / person</p>
         </div>
     )
 }
